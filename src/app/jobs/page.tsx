@@ -47,9 +47,8 @@ async function getJobs(searchParams: Record<string, string | string[] | undefine
       }
   
     // API呼び出し
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/jobs?${urlParams.toString()}`,
-      { cache: "no-store" }
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const res = await fetch(`${baseUrl}/api/jobs?${urlParams.toString()}`, { cache: "no-store" }
     );
     if (!res.ok) {
       throw new Error("求人情報の取得に失敗しました");

@@ -106,7 +106,8 @@ async function getJobs(searchParams: Record<string, string | string[] | undefine
   
           {/* 求人リスト */}
           <main className="w-3/4 p-4">
-            <div className="mb-4">求人件数: {total_count}件</div>
+            <div className="font-bold mb-2 text-xl">求人一覧</div>
+            <div className="mb-4">該当件数: {total_count}件</div>
             <div className="space-y-4">
               {jobs.map((job: Job) => (
                 <div key={job.id} className="border p-4 rounded shadow">

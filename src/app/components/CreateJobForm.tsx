@@ -55,15 +55,15 @@ const CreateJobPage: React.FC = () => {
       };
 
         return (
-      <div className="flex flex-1 justify-center items-center">
-        <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow w-96">
-          <h2 className="text-xl font-bold mb-4">求人投稿</h2>
+      <div className="flex-1 flex pt-3 justify-center ">
+        <form onSubmit={handleSubmit} className="bg-white w-full max-w-3xl p-8 space-y-6">
+          <h2 className="text-2xl font-bold ">求人投稿</h2>
 
           {/* カテゴリ選択 */}
-          <label className="block mb-2">
+          <label className="block mb-2 w-1/3">
             カテゴリを選択
             <select
-              className="border w-full p-2"
+              className="border w-full p-2 border-gray-500"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
             >
@@ -75,11 +75,11 @@ const CreateJobPage: React.FC = () => {
           </label>
 
           {/* 年収入力 */}
-          <label className="block mb-2">
+          <label className="block mb-2 w-1/3">
             年収 (万円)
             <input
               type="number"
-              className="border w-full p-2"
+              className="border w-full p-2 border-gray-500"
               value={salary}
               onChange={(e) => setSalary(e.target.value ? Number(e.target.value) : "")}
             />
@@ -90,7 +90,7 @@ const CreateJobPage: React.FC = () => {
             求人タイトル
             <input
               type="text"
-              className="border w-full p-2"
+              className="border w-full p-2 border-gray-500"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
@@ -99,7 +99,7 @@ const CreateJobPage: React.FC = () => {
           {/* 投稿ボタン */}
           <button
             type="submit"
-            className="bg-blue-600 text-white w-full py-2 rounded hover:bg-blue-700"
+            className="bg-blue-600 text-white w-1/3 py-2 rounded hover:bg-blue-700"
           >
             投稿
           </button>

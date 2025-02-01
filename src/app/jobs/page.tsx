@@ -50,8 +50,11 @@ async function getJobs(searchParams: Record<string, string | string[] | undefine
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
     const res = await fetch(`${baseUrl}/api/jobs?${urlParams.toString()}`, {
       cache: "no-store",
-      keepalive: true,  // 接続を長く保つ（短いリクエストを頻繁に発生させない）
-      headers: { "Connection": "keep-alive" }
+      keepalive: true, // 接続を長く保つ（短いリクエストを頻繁に発生させない）
+      headers: { 
+        "Connection": "keep-alive",
+        "Accept-Encoding": "gzip" // ✅ Gzip 圧縮をリクエスト
+      }    
     });
     
     if (!res.ok) {

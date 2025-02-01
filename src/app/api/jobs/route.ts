@@ -17,40 +17,6 @@ export async function GET(request: Request) {
         const from = (page - 1) * limit;
         const to = from + limit - 1; // range は開始～終了のindex指定
 
-        // let countQuery = supabase
-        //     .from("jobs")
-        //     .select("id", { count: "exact", head: true });
-
-        // if (categoryArray.length > 0) {
-        //     countQuery = countQuery.in("category", categoryArray);
-        // }
-        // if (salaryMin) {
-        //     countQuery = countQuery.gte("salary", salaryMin);
-        // }
-
-        // const { count, error: countError } = await countQuery;
-        // if (countError) {
-        //     return NextResponse.json({ error: countError.message }, { status: 500 });
-        // }
-    
-        // let dataQuery = supabase
-        //     .from("jobs")
-        //     .select("id, title, category, salary")
-        //     .order("id", { ascending: true })
-        //     .range(from, to);
-
-        // if (categoryArray.length > 0) {
-        //     dataQuery = dataQuery.in("category", categoryArray);
-        // }
-        // if (salaryMin) {
-        //     dataQuery = dataQuery.gte("salary", salaryMin);
-        // }
-
-        // const { data, error: dataError } = await dataQuery;
-        // if (dataError) {
-        //     return NextResponse.json({ error: dataError.message }, { status: 500 });
-        // }
-
         // ✅ Supabase クエリを作成
         let query = supabase
         .from("jobs")

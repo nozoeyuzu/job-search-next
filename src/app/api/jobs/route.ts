@@ -50,12 +50,12 @@ export async function GET(request: Request) {
         // if (dataError) {
         //     return NextResponse.json({ error: dataError.message }, { status: 500 });
         // }
-        
+
         // ✅ Supabase クエリを作成
         let query = supabase
         .from("jobs")
         .select("id, title, category, salary", { count: "exact" })
-        .order("id", { ascending: true })
+        .order("created_at", { ascending: true })
         .range(from, to);
 
         // ✅ カテゴリフィルタリング

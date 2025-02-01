@@ -92,7 +92,7 @@ async function getJobs(searchParams: Record<string, string | string[] | undefine
         <div className="min-h-screen flex flex-col">
         {/* ヘッダー */}
         <header className="bg-blue-900 text-white p-4 flex justify-between">
-          <div className="font-bold text-xl">求人検索アプリ</div>
+          <div className="font-bold text-2xl">求人検索アプリ</div>
           <nav>
             <Link href="/jobs" className="mr-4">
               求人検索

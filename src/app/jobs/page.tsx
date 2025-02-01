@@ -48,8 +48,12 @@ async function getJobs(searchParams: Record<string, string | string[] | undefine
   
     // API呼び出し
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-    const res = await fetch(`${baseUrl}/api/jobs?${urlParams.toString()}`, { cache: "no-store" }
-    );
+    const res = await fetch(`${baseUrl}/api/jobs?${urlParams.toString()}`, {
+      cache: "no-store",
+      keepalive: true,  // 接続を長く保つ（短いリクエストを頻繁に発生させない）
+      headers: { "Connection": "keep-alive" }
+    });
+    
     if (!res.ok) {
       throw new Error("求人情報の取得に失敗しました");
     }

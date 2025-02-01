@@ -91,13 +91,13 @@ async function getJobs(searchParams: Record<string, string | string[] | undefine
     return(
         <div className="min-h-screen flex flex-col">
         {/* ヘッダー */}
-        <header className="bg-blue-900 text-white p-4 flex justify-between">
+        <header className="bg-blue-900 text-white p-6 flex justify-between">
           <div className="font-bold text-2xl">求人検索アプリ</div>
           <nav>
-            <Link href="/jobs" className="mr-4">
+            <Link href="/jobs" className="mr-4 text-lg">
               求人検索
             </Link>
-            <Link href="/post">求人投稿</Link>
+            <Link href="/post" className="text-lg">求人投稿</Link>
           </nav>
         </header>
   
@@ -115,8 +115,8 @@ async function getJobs(searchParams: Record<string, string | string[] | undefine
             <div className="mb-4">該当件数: {total_count}件</div>
             <div className="space-y-4">
               {jobs.map((job: Job) => (
-                <div key={job.id} className="border p-4 rounded shadow">
-                  <div className="font-bold">{job.title}</div>
+                <div key={job.id} className="border p-4 rounded-md border-gray-400 ">
+                  <div className="font-bold text-lg">{job.title}</div>
                   <div>カテゴリ: {job.category}</div>
                   <div>年収: {job.salary}万円</div>
                 </div>
@@ -133,7 +133,7 @@ async function getJobs(searchParams: Record<string, string | string[] | undefine
                     salaryMin: salaryMinParam,
                     page: String(Math.max(1, pageParam - 1)),
                   }).toString()}`}
-                  className="px-3 py-1 border rounded bg-white"
+                  className="px-3 py-1 bg-white"
                 >
                   &lt;
                 </Link>
@@ -153,7 +153,7 @@ async function getJobs(searchParams: Record<string, string | string[] | undefine
                         salaryMin: salaryMinParam,
                         page: String(pageNumber),
                       }).toString()}`}
-                      className={`px-3 py-1 border rounded ${
+                      className={`px-3 py-1 ${
                         pageNumber === pageParam
                           ? "bg-blue-600 text-white"
                           : "bg-white"
@@ -171,7 +171,7 @@ async function getJobs(searchParams: Record<string, string | string[] | undefine
                     salaryMin: salaryMinParam,
                     page: String(Math.min(totalPages, pageParam + 1)),
                   }).toString()}`}
-                  className="px-3 py-1 border rounded bg-white"
+                  className="px-3 py-1 bg-white"
                 >
                   &gt;
                 </Link>

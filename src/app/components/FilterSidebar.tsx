@@ -65,7 +65,7 @@ export default function FilterSidebar({selectedCategories, selectedSalary} :Prop
 
   return (
     <aside className="w-1/4 p-4 bg-gray-100">
-      <h2 className="font-bold mb-2">求人カテゴリ</h2>
+      <h2 className="font-bold mb-2 text-lg">求人カテゴリ</h2>
       <div className="flex flex-col mb-4">
         {categoriesData.map(cat => (
           <label key={cat} className="inline-flex items-center mb-1">
@@ -80,7 +80,7 @@ export default function FilterSidebar({selectedCategories, selectedSalary} :Prop
         ))}
       </div>
 
-      <h2 className="font-bold mb-2">年収</h2>
+      <h2 className="font-bold mb-2 text-lg">年収</h2>
       <select
         className="border p-1"
         value={selectedSalary}

@@ -63,7 +63,7 @@ const CreateJobPage: React.FC = () => {
           <label className="block mb-2 w-1/3">
             カテゴリを選択
             <select
-              className="border w-full p-2 border-gray-500"
+              className="border w-full p-2 border-gray-500 rounded-md"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
             >
@@ -79,7 +79,7 @@ const CreateJobPage: React.FC = () => {
             年収 (万円)
             <input
               type="number"
-              className="border w-full p-2 border-gray-500"
+              className="border w-full p-2 border-gray-500 rounded-md"
               value={salary}
               onChange={(e) => setSalary(e.target.value ? Number(e.target.value) : "")}
             />
@@ -90,7 +90,7 @@ const CreateJobPage: React.FC = () => {
             求人タイトル
             <input
               type="text"
-              className="border w-full p-2 border-gray-500"
+              className="border w-full p-2 border-gray-500 rounded-md"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
